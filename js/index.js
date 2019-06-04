@@ -132,11 +132,11 @@ squareRoot.addEventListener('click', findSquareRoot);
 
 function changeExpressionValue(e) {
     e.preventDefault();
-    
+
     if( isNumeric(display.value) ) {
         display.value = display.value * -1;
     } else {
-        alert('Easter EGG =)');
+        alert('Sorry, but doesn\'t work in expression.\n It works only with single number');
     }
 }
 
