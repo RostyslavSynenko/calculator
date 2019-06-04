@@ -56,9 +56,9 @@ function eqPressed(e) {
     
     if(display.value[display.value.length - 2] === '/' 
         && lastSymbol === '0') {
-            alert('Division by zero is impossible')
-            display.value = '0';
-            return;
+        alert('Division by zero is impossible')
+        display.value = '0';
+        return;
     }
     
     if(lastSymbol === '/'
@@ -114,8 +114,6 @@ function putPoint(e) {
     if(display.value.includes('.')) {
         return;
     }
-    
-    
     
     display.value += '.';
 }
