@@ -132,7 +132,16 @@ squareRoot.addEventListener('click', findSquareRoot);
 
 function changeExpressionValue(e) {
     e.preventDefault();
-    alert('Easter EGG =)'); 
+    
+    if( isNumeric(display.value) ) {
+        display.value = display.value * -1;
+    } else {
+        alert('Easter EGG =)');
+    }
+}
+
+function isNumeric(n) {
+  return !isNaN(parseFloat(n)) && isFinite(n);
 }
 
 plusMinus.addEventListener('click', changeExpressionValue);
