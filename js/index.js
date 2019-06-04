@@ -102,9 +102,20 @@ cleanEntry.addEventListener('click', cleanEntryFunc);
 function putPoint(e) {
     e.preventDefault();
     
+    const lastSymbol = display.value[display.value.length - 1];
+    
+    if(lastSymbol === '/'
+        || lastSymbol === '*'
+        || lastSymbol === '+'
+        || lastSymbol=== '-') {
+        return;    
+    }
+    
     if(display.value.includes('.')) {
         return;
     }
+    
+    
     
     display.value += '.';
 }
