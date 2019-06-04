@@ -134,7 +134,7 @@ function changeExpressionValue(e) {
     if( isNumeric(display.value) ) {
         display.value = display.value * -1;
     } else {
-        alert('Sorry, but doesn\'t work in expression.\n It works only with single number');
+        alert('Sorry, but it doesn\'t work in expression.\n It works only with single number');
     }
 }
 
