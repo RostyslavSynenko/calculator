@@ -11,6 +11,12 @@ const eq = document.querySelector('.eq');
 
 digits.forEach( btn => btn.addEventListener('click', digitPressed) );
 opers.forEach( btn => btn.addEventListener('click', operPressed) );
+eq.addEventListener('click', eqPressed);
+backspace.addEventListener('click', deleteLastSymbol);
+cleanEntry.addEventListener('click', cleanEntryFunc);
+point.addEventListener('click', putPoint);
+squareRoot.addEventListener('click', findSquareRoot);
+plusMinus.addEventListener('click', changeExpressionValue);
 
 function digitPressed(e) {
     e.preventDefault();
@@ -76,8 +82,6 @@ function eqPressed(e) {
     return display.value = eval(display.value);
 }
 
-eq.addEventListener('click', eqPressed);
-
 function deleteLastSymbol(e) {
     e.preventDefault();
     
@@ -89,15 +93,11 @@ function deleteLastSymbol(e) {
     }
 }
 
-backspace.addEventListener('click', deleteLastSymbol);
-
 function cleanEntryFunc(e) {
     e.preventDefault();
     
     display.value = '0';
 }
-
-cleanEntry.addEventListener('click', cleanEntryFunc);
 
 function putPoint(e) {
     e.preventDefault();
@@ -114,15 +114,11 @@ function putPoint(e) {
     display.value += '.';
 }
 
-point.addEventListener('click', putPoint);
-
 function findSquareRoot(e) {
     e.preventDefault();
     
     display.value = Math.sqrt(eqPressed(e));
 }
-
-squareRoot.addEventListener('click', findSquareRoot);
 
 function changeExpressionValue(e) {
     e.preventDefault();
@@ -130,12 +126,11 @@ function changeExpressionValue(e) {
     if( isNumeric(display.value) ) {
         display.value = display.value * -1;
     } else {
-        alert('Sorry, but it doesn\'t work in expression.\n It works only with single number');
+        alert("Sorry, but it doesn't work in expression." +
+            "It works only with single number.");
     }
 }
 
 function isNumeric(n) {
   return !isNaN(parseFloat(n)) && isFinite(n);
 }
-
-plusMinus.addEventListener('click', changeExpressionValue);
