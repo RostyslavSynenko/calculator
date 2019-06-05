@@ -111,10 +111,6 @@ function putPoint(e) {
         return;    
     }
     
-    if(display.value.includes('.')) {
-        return;
-    }
-    
     display.value += '.';
 }
 
